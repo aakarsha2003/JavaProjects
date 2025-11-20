@@ -1,0 +1,43 @@
+package cdac;
+
+public class Nodes{
+	int data;
+	Nodes next;
+	public Nodes(int data) {
+		this.data=data;
+		this.next=null;
+	}
+}
+
+class LinkedList{
+	Nodes head;
+	public void insert(int data) {
+		Nodes newNode=new Nodes(data);
+		if(head==null) {
+			head=newNode;
+			return;
+		}
+		Nodes current=head;
+		while (current.next != null) {
+			current=current.next;
+		}
+		current.next=newNode;
+	}
+	public void display() {
+		Nodes current=head;
+		while(current!=null) {
+			System.out.println(current.data+"");
+			current=current.next;
+		}
+		System.out.println();
+	}
+}
+public class Node{
+	public static void main(String[]args) {
+		LinkedList list=new LinkedList();
+	list.insert(10);
+		list.insert(11);
+		list.insert(22);
+		list.display();
+	}
+}
